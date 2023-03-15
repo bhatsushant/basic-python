@@ -21,6 +21,11 @@ print(name[:5])
 # Will print the string from index 0 till the index specified after the first colon(not including the specified index after the colon) stepping over 2 indexes at a time
 print(name[:5:2])
 
+# Prints the string starting from the last index
+print(name[-1])
+
+print(name[-2])
+
 # Reverses the string
 print(name[::-1])
 
