@@ -5,7 +5,7 @@ from enum import Enum
 player_choice = int(
     input('Please enter your input\n1 for Rock\n2 for Paper\n3 for Scissor\n\n'))
 
-if player_choice < 1 | player_choice > 3:
+if player_choice < 1 or player_choice > 3:
     sys.exit('You can only enter the numbers 1, 2 or 3')
 
 
