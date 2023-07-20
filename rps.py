@@ -2,14 +2,14 @@ import random
 import sys
 from enum import Enum
 
-playagain = True
-while playagain:
+
+def rps():
     player_choice = int(
         input('Please enter your input\n1 for Rock\n2 for Paper\n3 for Scissor\n\n'))
 
-    if player_choice < 1 or player_choice > 3:
+    if player_choice not in [1, 2, 3]:
         print('You can only enter the numbers 1, 2 or 3')
-        continue
+        rps()
 
     class RPS(Enum):
         ROCK = 1
@@ -32,11 +32,14 @@ while playagain:
     else:
         print('🐍 Python wins!')
 
-    play = input(
-        "\nPlay again?\nPress Y to play again or any other key to exit.\n")
-    if play.lower() == "y":
-        continue
-    else:
-        print("\n🎉🎉🎉\nThank you for playing!\n")
-        playagain = False
-sys.exit("\nBye!👋")
+    print("\nPlay again?")
+    while True:
+        play = input("\nPress Y to play again or any other key to exit.\n")
+        if play.lower() == "y":
+            rps()
+        else:
+            print("\n🎉🎉🎉\nThank you for playing!\n")
+            sys.exit("\nBye!👋")
+
+
+rps()
